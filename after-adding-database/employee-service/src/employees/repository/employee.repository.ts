@@ -31,6 +31,7 @@ export class EmployeeRepository {
         return await this.employeeModel.find({ $and: [{ designation: { $regex: designation } }, { firstName: { $regex: name } }] })
 
     }
+    
     async update(employee: EmployeeUpdateDto): Promise<Employee> {
 
         return await this.employeeModel.findOneAndUpdate({ _id: employee.id },

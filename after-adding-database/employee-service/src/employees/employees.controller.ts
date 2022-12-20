@@ -30,6 +30,7 @@ export class EmployeesController {
     createEmployee(@Body() employeeCreateDto: EmployeeCreateDto): Promise<Employee> {
         return this.employeeService.create(employeeCreateDto)
     }
+    
     @Get('/:id')
     getEmployeeById(@Param('id') id: string): Promise<Employee> {
         return this.employeeService.getEmployeeById(id)
